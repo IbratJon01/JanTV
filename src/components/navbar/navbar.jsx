@@ -2,6 +2,9 @@ import { Stack , Box } from '@mui/material'
 import {Link} from 'react-router-dom'
 import {logo} from '../../constants'
 import {colors} from '../../constants/colors'
+import {SearchBar} from "../"
+
+
 const navbar = () => {
   return (
  <Stack direction={'row'} 
@@ -14,7 +17,7 @@ const navbar = () => {
     <Link to={'/'}>
     <img src={logo} alt="logo" height={30}/>
     </Link>
-    SearchBar
+    <SearchBar/>
     <Box/>
 
  </Stack>
