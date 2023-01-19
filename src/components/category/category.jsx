@@ -9,7 +9,7 @@ const Category = ({selectedCategoryHandler,selectedCategory}) => {
         {category.map(item=>(
             <button key={item.name} 
             className='category-btn'
-            style={{borderRadius: '0',background:item.name==selectedCategory}}
+            style={{borderRadius: '0',background:item.name=selectedCategory}}
              onClick={()=>selectedCategoryHandler(item.name)}>
                 <span style={{color: colors.secondary,marginRight:'15px'}}>{item.icon}</span>
                 <span style={{opacity:'1'}}>{item.name}</span>

@@ -1,14 +1,18 @@
-import {Link} from 'react-router-dom'
+import {useState , useEffect} from 'react'
 import { Stack,Box,Container, Typography } from '@mui/material'
-import {useState} from 'react'
 import {colors} from "../../constants/colors"
-import { Category } from '../'
-import { category } from '../../constants'
+import { Category ,Videos } from '../'
+import {ApiService} from "../../server/api.service"
 const Main=()=> {
   const [selectedCategory,setSelectedCategory ] = useState('New')
   
   const selectedCategoryHandler = category => setSelectedCategory(category)
     
+  useEffect(()=>{
+    ApiService.fetching('search').then(data=> console.log(data))
+
+  },[])
+ 
   
   return (
     
@@ -23,7 +27,7 @@ selectedCategory={selectedCategory}
     <Typography variant='h4' fontWeight={'bold'} nb={2}>
       {selectedCategory }<span style={{color:colors.secondary}}> video</span>
       </Typography>
-      Vedos
+      <Videos/>
   </Container>
 
 </Box>
